@@ -1,0 +1,92 @@
+<%= form_with(model: pedido, local: true) do |form| %>
+  <% if pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pedido.errors.count, "error") %> prohibited this pedido from being saved:</h2>
+
+      <ul>
+      <% pedido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mail %>
+    <%= form.text_field :mail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telefono %>
+    <%= form.number_field :telefono %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_field :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.text_field :tipo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :operacion %>
+    <%= form.text_field :operacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :region %>
+    <%= form.text_field :region %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comuna %>
+    <%= form.text_field :comuna %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direccion %>
+    <%= form.text_field :direccion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :superficie %>
+    <%= form.number_field :superficie %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dorms %>
+    <%= form.number_field :dorms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bano %>
+    <%= form.number_field :bano %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estacionamiento %>
+    <%= form.number_field :estacionamiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :anio %>
+    <%= form.number_field :anio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :piso %>
+    <%= form.number_field :piso %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
