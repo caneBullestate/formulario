@@ -10,6 +10,7 @@ class PedidosController < ApplicationController
   # GET /pedidos/1
   # GET /pedidos/1.json
   def show
+    @pedido = Pedido.find(params[:id])
   end
 
   # GET /pedidos/new
