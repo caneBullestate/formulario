@@ -54,7 +54,7 @@ class PedidosController < ApplicationController
     @pedido.destroy
  
     redirect_to pedidos_path
-    end
+    
   end
 
   private
