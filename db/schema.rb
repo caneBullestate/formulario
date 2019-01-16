@@ -12,7 +12,11 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "pedidos", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+<<<<<<< HEAD
+  create_table "pedidos", id: true, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+=======
+  create_table "pedidos", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+>>>>>>> parent of b823ff4... Merge branch 'master' of https://github.com/caneBullestate/formulario
     t.string "nombre", null: false
     t.string "mail", null: false
     t.integer "telefono", null: false
@@ -28,7 +32,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "estacionamiento"
     t.integer "anio"
     t.integer "piso"
-    t.integer "id"
+  
    
   end
 
