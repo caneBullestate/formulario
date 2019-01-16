@@ -27,39 +27,33 @@ class PedidosController < ApplicationController
   # POST /pedidos.json
   def create
     @pedido = Pedido.new(pedido_params)
-
-    respond_to do |format|
-      if @pedido.save
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
-        format.json { render :show, status: :created, location: @pedido }
-      else
-        format.html { render :new }
-        format.json { render json: @pedido.errors, status: :unprocessable_entity }
-      end
+ 
+    if @pedido.save
+      redirect_to @pedido
+    else
+      render 'new'
     end
   end
 
   # PATCH/PUT /pedidos/1
   # PATCH/PUT /pedidos/1.json
   def update
-    respond_to do |format|
-      if @pedido.update(pedido_params)
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully updated.' }
-        format.json { render :show, status: :ok, location: @pedido }
-      else
-        format.html { render :edit }
-        format.json { render json: @pedido.errors, status: :unprocessable_entity }
-      end
+    @pedido = Pedido.find(params[:id])
+ 
+    if @Pedido.update(pedido_params)
+      redirect_to @pedido
+    else
+      render 'edit'
     end
   end
 
   # DELETE /pedidos/1
   # DELETE /pedidos/1.json
   def destroy
+    @pedido = Pedido.find(params[:id])
     @pedido.destroy
-    respond_to do |format|
-      format.html { redirect_to pedidos_url, notice: 'Pedido was successfully destroyed.' }
-      format.json { head :no_content }
+ 
+    redirect_to pedidos_path
     end
   end
 
