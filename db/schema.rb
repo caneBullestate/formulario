@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "estacionamiento"
     t.integer "anio"
     t.integer "piso"
+    t.integer "id"
    
   end
 
