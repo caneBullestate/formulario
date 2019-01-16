@@ -20,6 +20,7 @@ class PedidosController < ApplicationController
 
   # GET /pedidos/1/edit
   def edit
+    @pedido = Pedido.find(params[:id])
   end
 
   # POST /pedidos
